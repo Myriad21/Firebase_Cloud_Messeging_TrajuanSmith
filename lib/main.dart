@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
 
           final assetName = message.data['asset'];
           if (assetName != null && assetName.toString().isNotEmpty) {
-            imagePath = 'assets/images/$assetName.png';
+            imagePath = 'assets/images/$assetName.webp';
           } else {
             imagePath = 'assets/images/default.webp';
           }
