@@ -63,6 +63,12 @@ class _HomePageState extends State<HomePage> {
 
     _fcmService.initialize(
       onData: (RemoteMessage message) {
+        final assetName = message.data['asset'];
+        debugPrint('Raw asset value: $assetName');
+        debugPrint(
+          'Trying to load: assets/images/${assetName != null && assetName.toString().isNotEmpty ? assetName : 'default'}.webp',
+        );
+
         setState(() {
           statusText = message.notification?.title ?? 'Payload received';
 
